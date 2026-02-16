@@ -9,7 +9,7 @@ export default async function HomePage() {
   return (
     <div className="space-y-8">
       <h1 className="text-3xl text-gray-700 font-bold">Welcome to EchoLink!</h1>
-      <p>This is the official, school-wide and emergency an announcements system of St Patrick's High</p>
+      <p>This is the official, school-wide and emergency an announcements system of St Patrick's High School</p>
       
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
