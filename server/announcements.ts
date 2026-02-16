@@ -6,6 +6,7 @@ export async function getAllAnnouncementsCount() {
     return content.count
 }
 
-export async function getSpecificAnnouncementsCount() {
-
+export async function getImportantAnnouncementsCount() {
+    const content = await supabase.from("announcements").select("*", { count: 'exact', head: true }).eq('priority', 1)
+    return content.count
 }

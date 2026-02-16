@@ -1,9 +1,10 @@
 import StatCard from "@/components/stats-card";
-import { getAllAnnouncementsCount } from "@/server/announcements";
-import { Megaphone } from "lucide-react";
+import { getAllAnnouncementsCount, getImportantAnnouncementsCount } from "@/server/announcements";
+import { Megaphone, Shield } from "lucide-react";
 
 export default async function HomePage() {
   const announcementsCount = await getAllAnnouncementsCount()
+  const importantAnnouncementsCount = await getImportantAnnouncementsCount()
 
   return (
     <div className="space-y-8">
@@ -13,6 +14,7 @@ export default async function HomePage() {
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <StatCard title="All Announcements" value={announcementsCount} icon={<Megaphone className="text-blue-500" size={24}/>}/>
+        <StatCard title="Important Announcements" value={importantAnnouncementsCount} icon={<Shield className="text-orange-500" size={24}/>}/>
       </div>
 
     </div>
