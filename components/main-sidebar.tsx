@@ -3,24 +3,20 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import {
-  LayoutDashboard,
-  Users,
-  Calendar,
-  Stethoscope,
-  Pill,
-  FileText,
-  Settings,
-  Activity,
+  Siren,
+  Home,
+  Megaphone,
+  OctagonAlert,
+  BadgeAlert,
+  Shield,
 } from "lucide-react"
 
 const navItems = [
-  { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
-  { name: "Patients", href: "/patients", icon: Users },
-  { name: "Appointments", href: "/appointments", icon: Calendar },
-  { name: "Doctors", href: "/doctors", icon: Stethoscope },
-  { name: "Pharmacy", href: "/pharmacy", icon: Pill },
-  { name: "Reports", href: "/reports", icon: FileText },
-  { name: "Settings", href: "/settings", icon: Settings },
+  { name: "Dashboard", href: "/", icon: Home },
+  { name: "Announcements", href: "/announcements", icon: Megaphone },
+  { name: "Emergencies", href: "/emergencies", icon: OctagonAlert },
+  { name: "Important Announcements", href: "/announcements/important", icon: Shield},
+  { name: "Critical Emergencies", href: "/emergencies/critical", icon: BadgeAlert}
 ]
 
 export default function MainSidebar() {
@@ -33,10 +29,10 @@ export default function MainSidebar() {
       <div>
         {/* Logo */}
         <div className="flex items-center gap-3 px-6 py-6">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500">
-            <Activity className="text-white" size={22} />
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green-500">
+            <Siren className="text-white" size={22}/>
           </div>
-          <span className="text-xl font-semibold">MediCare</span>
+          <span className="text-xl font-semibold">St Patrick's EchoLink</span>
         </div>
 
         {/* Navigation */}
@@ -52,7 +48,7 @@ export default function MainSidebar() {
                 className={`flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-200
                 ${
                   isActive
-                    ? "bg-emerald-500 text-white shadow-md"
+                    ? "bg-green-500 text-white shadow-md"
                     : "hover:bg-slate-700/60"
                 }`}
               >
