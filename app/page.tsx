@@ -3,7 +3,7 @@ import { getAllAnnouncementsCount } from "@/server/announcements";
 import { Megaphone } from "lucide-react";
 
 export default async function HomePage() {
-  const allAnnouncements = await (await getAllAnnouncementsCount())
+  const announcementsCount = await getAllAnnouncementsCount()
 
   return (
     <div className="space-y-8">
@@ -12,7 +12,7 @@ export default async function HomePage() {
       
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <StatCard title="All Announcements" value={allAnnouncements.count} icon={<Megaphone className="text-blue-500" size={24}/>}/>
+        <StatCard title="All Announcements" value={announcementsCount} icon={<Megaphone className="text-blue-500" size={24}/>}/>
       </div>
 
     </div>
