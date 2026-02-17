@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} antialiased flex`}>
         <MainSidebar />
-        <main className="flex-1 p-8">
+        <main className="flex-1 p-8 ml-72">
           {children}
         </main>
       </body>

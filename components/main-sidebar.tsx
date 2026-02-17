@@ -23,7 +23,7 @@ export default function MainSidebar() {
   const pathname = usePathname()
 
   return (
-    <aside className="flex h-screen w-72 flex-col justify-between bg-gradient-to-b from-slate-900 to-slate-800 text-slate-200">
+    <aside className="fixed left-0 top-0 h-screen w-72 flex flex-col justify-between bg-gradient-to-b from-slate-900 to-slate-800 text-slate-200 z-20">
       
       {/* Top Section */}
       <div>
