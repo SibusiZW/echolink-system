@@ -1,4 +1,4 @@
-import StatCard from "@/components/stats-card";
+import StatCard from "@/components/cards/stats-card";
 import { getAllAnnouncementsCount, getImportantAnnouncementsCount } from "@/server/announcements";
 import { getAllEmergenciesCount, getCriticalEmergenciesCount } from "@/server/emergencies";
 import { BadgeAlert, Megaphone, OctagonAlert, Shield } from "lucide-react";
