@@ -11,3 +11,13 @@ export async function getCriticalEmergenciesCount() {
 
     return content.count
 }
+
+export async function getEmergencies() {
+    const { data, error } = await supabase.from("emergencies").select('*').order('createc_at', { ascending: false })
+
+    if (error) {
+        return []
+    }
+
+    return data
+}

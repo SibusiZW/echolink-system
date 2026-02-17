@@ -12,6 +12,9 @@ export default async function AnnouncementsPage() {
                 <Megaphone className="text-blue-500" size={24}/>
                 <h1 className="text-3xl font-semibold text-gray-500 mt-4">{item.title}</h1>
                 <p>{item.description}</p>
+                <span>
+                    {new Date(item.created_at).toLocaleString()}
+                </span>
             </div>)}
         </div>
     )
