@@ -5,3 +5,9 @@ export async function getAllEmergenciesCount() {
     const content = await supabase.from("emergencies").select("*", { count: 'exact', head: true })
     return content.count
 }
+
+export async function getCriticalEmergenciesCount() {
+    const content = await supabase.from("emergencies").select("*", { count: 'exact', head: true }).eq('priority', 1)
+
+    return content.count
+}
