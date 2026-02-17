@@ -15,6 +15,11 @@ export async function getImportantAnnouncementsCount() {
 
 // Read
 export async function getAnnouncements() {
-    const content = supabase.from("announcements").select('*').order('created_at', { ascending: false })
-    return content
+    const { data, error } = await supabase.from("announcements").select('*').order('created_at', { ascending: false })
+    
+    if (error) {
+        return []
+    }
+
+    return data
 }
