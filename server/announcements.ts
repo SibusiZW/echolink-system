@@ -10,3 +10,11 @@ export async function getImportantAnnouncementsCount() {
     const content = await supabase.from("announcements").select("*", { count: 'exact', head: true }).eq('priority', 1)
     return content.count
 }
+
+// CRUD
+
+// Read
+export async function getAnnouncements() {
+    const content = supabase.from("announcements").select('*').order('created_at', { ascending: false })
+    return content
+}
