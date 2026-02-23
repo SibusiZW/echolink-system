@@ -10,8 +10,8 @@ export default async function AnnouncementsPage() {
             
             {announcements?.map(item => <div className="p-8 mb-6 border rounded-xl border-blue-500" key={item.id}>
                 <Megaphone className="text-blue-500" size={24}/>
-                <h1 className="text-3xl font-semibold text-gray-500 mt-4">{item.title}</h1>
-                <p>{item.description}</p>
+                <h1 className="text-3xl font-semibold text-gray-500 mt-4 mb-6">{item.title}</h1>
+                <p className="m-6">{item.description}</p>
                 <span>
                     {new Date(item.created_at).toLocaleString()}
                 </span>
