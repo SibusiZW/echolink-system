@@ -15,7 +15,7 @@ export default async function HomePage() {
       <p>This is the official, school-wide and emergency an announcements system of St Patrick's High School</p>
       
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
         <StatCard title="All Announcements" value={announcementsCount} icon={<Megaphone className="text-blue-500" size={24}/>}/>
         <StatCard title="Important Announcements" value={importantAnnouncementsCount} icon={<Shield className="text-orange-500" size={24}/>}/>
         <StatCard title="All Emergencies" value={emergenciesCount} icon={<OctagonAlert className="text-red-500" size={24}/>}/>
