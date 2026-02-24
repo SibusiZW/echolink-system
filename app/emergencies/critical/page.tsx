@@ -1,8 +1,8 @@
-import { getEmergencies } from "@/server/emergencies"
+import { getCriticalEmergencies } from "@/server/emergencies"
 import { BadgeAlert } from "lucide-react"
 
 export default async function CriticalEmergenciesPage() {
-    const emergencies = await getEmergencies();
+    const emergencies = await getCriticalEmergencies();
 
     return (
         <div className="space-y-8">

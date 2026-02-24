@@ -21,3 +21,13 @@ export async function getEmergencies() {
 
     return data
 }
+
+export async function getCriticalEmergencies() {
+    const { data, error } = await supabase.from("emergencies").select('*').eq('priority', 1).order('created_at', { ascending: false })
+
+    if (error) {
+        return []
+    }
+
+    return data
+}
