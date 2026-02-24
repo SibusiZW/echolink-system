@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { inter } from "@/lib/fonts";
 import "./globals.css";
 import MainSidebar from "@/components/main-sidebar";
+import { Toaster } from "sonner";
 
 
 export const metadata: Metadata = {
@@ -16,11 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased flex`}>
+      <body className={`${inter.className} bg-[#dddddd] antialiased flex`}>
         <MainSidebar />
         <main className="flex-1 p-8 ml-72">
           {children}
         </main>
+        <Toaster />
       </body>
     </html>
   );
