@@ -23,3 +23,13 @@ export async function getAnnouncements() {
 
     return data
 }
+
+export async function getImportantAnnouncements() {
+    const { data, error } = await supabase.from("announcements").select('*').eq('priority', 1).order('created_at', { ascending: false })
+    
+    if (error) {
+        return []
+    }
+
+    return data
+}

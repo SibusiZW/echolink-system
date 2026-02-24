@@ -1,8 +1,8 @@
-import { getAnnouncements } from "@/server/announcements"
-import { Megaphone, Shield } from "lucide-react"
+import { getImportantAnnouncements } from "@/server/announcements"
+import { Shield } from "lucide-react"
 
-export default async function AnnouncementsPage() {
-    const announcements =  await getAnnouncements()
+export default async function ImportantAnnouncementsPage() {
+    const announcements =  await getImportantAnnouncements()
 
     return (
         <div className="space-y-8">
