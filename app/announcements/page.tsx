@@ -1,5 +1,5 @@
 import { getAnnouncements } from "@/server/announcements"
-import { Divide, Megaphone } from "lucide-react"
+import { Megaphone } from "lucide-react"
 
 export default async function AnnouncementsPage() {
     const announcements =  await getAnnouncements()
@@ -7,17 +7,14 @@ export default async function AnnouncementsPage() {
     return (
         <div className="space-y-8">
             <h1 className="text-4xl text-gray-600">Announcements</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-                {announcements?.map(item => <div className="p-8 mb-6 border rounded-xl border-blue-500" key={item.id}>
-                    <Megaphone className="text-blue-500" size={24}/>
-                    <h1 className="text-3xl font-semibold text-gray-500 mt-4 mb-6">{item.title}</h1>
-                    <p className="m-6">{item.description}</p>
-                    <span>
-                        {new Date(item.created_at).toLocaleString()}
-                    </span>
-                </div>)}
-            </div>
-
+            {announcements.map(item => <div key={item.id} className="space-y-4 p-5 border border-blue-500 rounded-md">
+                <Megaphone className="text-blue-500" size={30}/>
+                <h1 className="text-gray-500 text-xl">{item.title}</h1>
+                <p>
+                    {item.description}
+                </p>
+                <span className="text-gray-500">Posted on: {new Date(item.created_at).toLocaleDateString()}</span>
+            </div>)}
         </div>
     )
 }
