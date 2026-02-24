@@ -7,7 +7,7 @@ export default async function CriticalEmergenciesPage() {
     return (
         <div className="space-y-8">
             <h1 className="text-4xl text-gray-600">Critical Emergencies</h1>
-            {emergencies.map(item => <div key={item.id} className="space-y-4 p-5 border border-red-800 rounded-md">
+            {emergencies.map(item => <div key={item.id} className="bg-white space-y-4 p-5 border border-red-800 rounded-md">
                 <BadgeAlert className="text-red-800" size={30}/>
                 <h1 className="text-gray-500 text-xl">{item.title}</h1>
                 <p>
