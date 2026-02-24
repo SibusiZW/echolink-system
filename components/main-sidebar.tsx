@@ -9,6 +9,7 @@ import {
   OctagonAlert,
   BadgeAlert,
   Shield,
+  MessageCircle,
 } from "lucide-react"
 
 const navItems = [
@@ -16,7 +17,8 @@ const navItems = [
   { name: "Announcements", href: "/announcements", icon: Megaphone },
   { name: "Emergencies", href: "/emergencies", icon: OctagonAlert },
   { name: "Important Announcements", href: "/announcements/important", icon: Shield},
-  { name: "Critical Emergencies", href: "/emergencies/critical", icon: BadgeAlert}
+  { name: "Critical Emergencies", href: "/emergencies/critical", icon: BadgeAlert},
+  { name: "Send Queries", href: "/queries", icon: MessageCircle }
 ]
 
 export default function MainSidebar() {
