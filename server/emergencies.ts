@@ -13,7 +13,7 @@ export async function getCriticalEmergenciesCount() {
 }
 
 export async function getEmergencies() {
-    const { data, error } = await supabase.from("emergencies").select('*').order('createc_at', { ascending: false })
+    const { data, error } = await supabase.from("emergencies").select('*').order('created_at', { ascending: false })
 
     if (error) {
         return []
