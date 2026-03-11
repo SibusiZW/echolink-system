@@ -1,27 +1,21 @@
 import type { Metadata } from "next";
 import { inter } from "@/lib/fonts";
 import "./globals.css";
-import MainSidebar from "@/components/main-sidebar";
 import { Toaster } from "sonner";
-
+import LayoutWrapper from "@/components/layout-wrapper"; // Your new client component
 
 export const metadata: Metadata = {
   title: "EchoLink",
-  description: "School Wide Emergency & Announcements System for St Patrick's. Made using Next.js and Supabase",
+  description: "School Wide Emergency & Announcements System...",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={`${inter.className} bg-[#dddddd] antialiased flex`}>
-        <MainSidebar />
-        <main className="flex-1 p-8 ml-72">
+        <LayoutWrapper>
           {children}
-        </main>
+        </LayoutWrapper>
         <Toaster />
       </body>
     </html>
