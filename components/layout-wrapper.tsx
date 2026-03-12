@@ -4,7 +4,7 @@ import MainSidebar from "@/components/main-sidebar";
 
 export default function LayoutWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const hideSidebar = pathname?.startsWith("/login") || pathname?.startsWith("/auth");
+  const hideSidebar = pathname?.startsWith("/login") || pathname?.startsWith("/auth") || pathname?.startsWith("/backend");
 
   return (
     <>
