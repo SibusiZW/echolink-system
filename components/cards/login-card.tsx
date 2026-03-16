@@ -37,8 +37,8 @@ export default function LoginCard() {
             </div>
 
             <form onSubmit={handleLogin}>
-                <Input placeholder="Enter email" type="email" onChange={(e) => setEmail(e.target.value)} className="mb-2"/>
-                <Input placeholder="Enter password" type="password" onChange={(e) => setPassword(e.target.value)} className="mb-2"/>
+                <Input value={email} placeholder="Enter email" type="email" onChange={(e) => setEmail(e.target.value)} className="mb-2"/>
+                <Input value={password} placeholder="Enter password" type="password" onChange={(e) => setPassword(e.target.value)} className="mb-2"/>
 
                 <Button className="w-full">{renderContent()}</Button>
             </form>
