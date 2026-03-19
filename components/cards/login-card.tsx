@@ -2,11 +2,29 @@
 import { Loader2, LogIn } from "lucide-react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 export default function LoginCard() {
+
+    const router = useRouter();
+
+    useEffect(() => {
+        const checkUser = async () => {
+            const {
+                data: { user },
+            } = await supabase.auth.getUser();
+
+            if (user) {
+                router.push('/backend')
+            }
+            
+        }
+        checkUser();
+
+    }, [router])
 
     const [loading, setLoading] = useState(false);
     const [email, setEmail] = useState("");
