@@ -14,7 +14,7 @@ export default function DeleteAnnButton({ id }: { id: any }) {
             </DialogTrigger>
 
             <DialogContent>
-                <DialogTitle>Record deletion</DialogTitle>
+                <DialogTitle>Confirm deletion</DialogTitle>
 
                 <Button variant={'destructive'}>Confirm delete</Button>
                 <DialogDescription>

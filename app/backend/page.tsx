@@ -1,4 +1,5 @@
 import DeleteAnnButton from "@/components/dialogs/delete-ann-button";
+import EditAnnButton from "@/components/dialogs/edit-ann-button";
 import { getAnnouncements } from "@/server/announcements"
 import { Shield } from "lucide-react";
 
@@ -23,6 +24,7 @@ export default async function BackendPage() {
 
                 <div className="flex">
                     <DeleteAnnButton id={item.id}/>
+                    <EditAnnButton id={item.id}/>
                 </div>
             </div>)}
         </div>
