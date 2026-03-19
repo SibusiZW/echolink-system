@@ -34,3 +34,11 @@ export async function getImportantAnnouncements() {
 
     return data
 }
+
+export async function deleteAnnouncement(id: any) {
+    const { error } = await supabase.from('announcements').delete().eq('id', id)
+
+    if (error) { 
+        return "Error"
+    }
+}

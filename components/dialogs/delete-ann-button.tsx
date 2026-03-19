@@ -1,10 +1,24 @@
 'use client';
 
-import { Trash2 } from "lucide-react";
+import { Loader2, Trash2 } from "lucide-react";
 import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "../ui/dialog";
 import { Button } from "../ui/button";
+import { deleteAnnouncement } from "@/server/announcements";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function DeleteAnnButton({ id }: { id: any }) {
+
+    const router = useRouter();
+    const [loading, setLoading] = useState(false);
+
+    async function handleDelete(id: any) {
+        setLoading(true);
+        await deleteAnnouncement(id);
+        setLoading(false);
+        router.refresh();
+    }
+
     return (
         <Dialog>
             <DialogTrigger asChild>
@@ -16,7 +30,9 @@ export default function DeleteAnnButton({ id }: { id: any }) {
             <DialogContent>
                 <DialogTitle>Confirm deletion</DialogTitle>
 
-                <Button variant={'destructive'}>Confirm delete</Button>
+                <Button onClick={() => handleDelete(id)} variant={'destructive'}>
+                    {loading ? <Loader2 className="animate-spin" /> : "Confirm delete"}
+                </Button>
                 <DialogDescription>
                     Are you sure you want to delete this? The record will be permanently deleted from our.
                 </DialogDescription>
