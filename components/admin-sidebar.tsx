@@ -1,25 +1,28 @@
 "use client"
 
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import {
-  Siren,
   Home,
-  Megaphone,
-  OctagonAlert,
-  BadgeAlert,
-  Shield,
-  MessageCircle,
   Settings,
 } from "lucide-react"
 import { Button } from "./ui/button"
+import { supabase } from "@/lib/supabase"
 
 const navItems = [
   { name: "Manage Announcements", href: "/backend", icon: Home }
 ]
 
+
 export default function AdminSidebar() {
   const pathname = usePathname()
+
+  const router = useRouter();
+
+  async function handleLogout() {
+    await supabase.auth.signOut();
+    router.push('login/')
+  }
 
   return (
     <aside className="fixed left-0 top-0 h-screen w-72 flex flex-col justify-between bg-gradient-to-b from-slate-900 to-slate-800 text-slate-200 z-20">
@@ -57,7 +60,7 @@ export default function AdminSidebar() {
             )
           })}
         </nav>
-        <Button className="bg-red-500 mt-2 ml-4 w-60 text-white shadow-md flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-200">Log Out</Button>
+        <Button onClick={() => handleLogout()} className="bg-red-500 mt-2 ml-4 w-60 text-white shadow-md flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-200">Log Out</Button>
       </div>
 
 
