@@ -39,7 +39,7 @@ export default function LoginCard() {
             toast.error(`Error: ${error?.message}`)
             return
         }
-        toast.success("Logged In!")
+        router.push('backend/')
         setLoading(false);
     }
 
