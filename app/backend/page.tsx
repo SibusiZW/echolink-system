@@ -1,3 +1,4 @@
+import DeleteAnnButton from "@/components/dialogs/delete-ann-button";
 import { getAnnouncements } from "@/server/announcements"
 import { Shield } from "lucide-react";
 
@@ -18,7 +19,11 @@ export default async function BackendPage() {
                 <p>
                     Priority: {item.priority}
                 </p>
-                <span className="text-gray-500">Posted on: {new Date(item.created_at).toLocaleDateString()}</span>
+                <span className="text-gray-500 ">Posted on: {new Date(item.created_at).toLocaleDateString()}</span>
+
+                <div className="flex">
+                    <DeleteAnnButton id={item.id}/>
+                </div>
             </div>)}
         </div>
     )
