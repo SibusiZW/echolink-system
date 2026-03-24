@@ -1,6 +1,7 @@
 import DeleteAnnButton from "@/components/dialogs/delete-ann-button";
 import DeleteEmButton from "@/components/dialogs/delete-em-button";
 import EditAnnButton from "@/components/dialogs/edit-ann-button";
+import EditEmButton from "@/components/dialogs/edit-em-button";
 import { getEmergencies } from "@/server/emergencies"
 import { OctagonAlert, Shield } from "lucide-react";
 
@@ -25,7 +26,7 @@ export default async function BackendPage() {
 
                 <div className="flex">
                     <DeleteEmButton id={item.id}/>
-                    <EditAnnButton id={item.id}/>
+                    <EditEmButton id={item.id} />
                 </div>
             </div>)}
         </div>
