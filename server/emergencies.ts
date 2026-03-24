@@ -32,3 +32,11 @@ export async function getCriticalEmergencies() {
 
     return data
 }
+
+export async function deleteEmergency(id: any) {
+    const { error } = await supabase.from('emergencies').delete().eq('id', id)
+
+    if (error) { 
+        return "Error"
+    }
+}

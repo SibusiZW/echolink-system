@@ -1,4 +1,5 @@
 import DeleteAnnButton from "@/components/dialogs/delete-ann-button";
+import DeleteEmButton from "@/components/dialogs/delete-em-button";
 import EditAnnButton from "@/components/dialogs/edit-ann-button";
 import { getEmergencies } from "@/server/emergencies"
 import { OctagonAlert, Shield } from "lucide-react";
@@ -23,7 +24,7 @@ export default async function BackendPage() {
                 <span className="text-gray-500 ">Posted on: {new Date(item.created_at).toLocaleDateString()}</span>
 
                 <div className="flex">
-                    <DeleteAnnButton id={item.id}/>
+                    <DeleteEmButton id={item.id}/>
                     <EditAnnButton id={item.id}/>
                 </div>
             </div>)}
