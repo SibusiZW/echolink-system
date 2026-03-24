@@ -6,7 +6,7 @@ export default async function CriticalEmergenciesPage() {
     const emergencies = await getCriticalEmergencies();
 
     async function optimizedResponse(text: any) {
-        const res = generateResponse(text)
+        const res = await generateResponse(text)
         return res
     }
 

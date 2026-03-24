@@ -6,7 +6,7 @@ export default async function EmergenciesPage() {
     const emergencies = await getEmergencies();
 
     async function optimizedResponse(text: any) {
-        const res = generateResponse(text)
+        const res = await generateResponse(text)
         return res
     }
 
