@@ -42,3 +42,11 @@ export async function deleteAnnouncement(id: any) {
         return "Error"
     }
 }
+
+export async function addAnnouncement(title: any, description: any, priority: any) {
+    const { error } = await supabase.from('announcements').insert({ title: title, description: description, priority: priority })
+
+    if (error) {
+        return "Error"
+    }
+}

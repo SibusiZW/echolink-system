@@ -40,3 +40,11 @@ export async function deleteEmergency(id: any) {
         return "Error"
     }
 }
+
+export async function addEmergency(title: any, description: any, priority: any) {
+    const { error } = await supabase.from('emergencies').insert({ title: title, description: description, priority: priority })
+
+    if (error) {
+        return "Error"
+    }
+}

@@ -1,3 +1,4 @@
+import AddEmButton from "@/components/dialogs/add-em-button";
 import DeleteAnnButton from "@/components/dialogs/delete-ann-button";
 import DeleteEmButton from "@/components/dialogs/delete-em-button";
 import EditAnnButton from "@/components/dialogs/edit-ann-button";
@@ -12,6 +13,7 @@ export default async function BackendPage() {
     return (
         <div className="space-y-8">
             <h1 className="text-4xl text-gray-600">Emergencies</h1>
+            <AddEmButton />
             {emergencies.map(item => <div key={item.id} className="bg-white space-y-4 p-5 border border-red-500 rounded-md">
                 <OctagonAlert className="text-red-500" size={30}/>
                 <h1 className="text-gray-500 text-xl">{item.title}</h1>

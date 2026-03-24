@@ -4,7 +4,7 @@ import { BadgePlus } from "lucide-react";
 import { Button } from "../ui/button";
 import { Dialog, DialogTrigger } from "../ui/dialog";
 
-export default function AddAnnButton() {
+export default function AddEmButton() {
     return (
         <Dialog>
             <DialogTrigger asChild>
