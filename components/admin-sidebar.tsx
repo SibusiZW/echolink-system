@@ -4,13 +4,15 @@ import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import {
   Home,
+  OctagonAlert,
   Settings,
 } from "lucide-react"
 import { Button } from "./ui/button"
 import { supabase } from "@/lib/supabase"
 
 const navItems = [
-  { name: "Manage Announcements", href: "/backend", icon: Home }
+  { name: "Manage Announcements", href: "/backend", icon: Home },
+  { name: "Manage Emergencies", href: "/backend/emergencies", icon: OctagonAlert }
 ]
 
 
