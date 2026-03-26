@@ -4,6 +4,7 @@ import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import {
   Home,
+  LogOut,
   OctagonAlert,
   Settings,
 } from "lucide-react"
@@ -62,7 +63,10 @@ export default function AdminSidebar() {
             )
           })}
         </nav>
-        <Button onClick={() => handleLogout()} className="bg-red-500 mt-2 ml-4 w-60 text-white shadow-md flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-200">Log Out</Button>
+        <Button onClick={() => handleLogout()} className="bg-red-500 mt-2 ml-4 w-60 text-white shadow-md flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-200">
+          <LogOut />
+          Log Out
+        </Button>
       </div>
 
 
